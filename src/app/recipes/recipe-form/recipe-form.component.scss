@@ -1,0 +1,26 @@
+.card-container {
+    width: 800px;
+    min-height: 300px;
+    padding: 20px;
+}
+
+.ingredient-form {
+    width: 760px;
+    display: flex;
+    justify-content: space-between;
+
+    .ingredient-name {
+        width: 400px
+    }
+    .ingredient-qty {
+        width: 100px
+    }
+    .ingredient-units {
+        width: 100px
+    }
+    .ingredient-form-remove-btn {
+        display: flex;
+        align-items: center;
+        height: 56px;
+    }
+}
