@@ -10,8 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
-
-
+import {MatListModule} from '@angular/material/list';
 
 const ROUTES: Routes = [
   {
@@ -35,7 +34,8 @@ const ROUTES: Routes = [
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatListModule
   ]
 })
 export class RecipesModule { }

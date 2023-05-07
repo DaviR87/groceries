@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-
-export interface IngredientForm {
-  name: FormControl<string | null>,
-  quantity: FormControl<number | null>,
-  unit: FormControl<IngredientUnit | null>
-}
-
-export type IngredientUnit = 'grams' | 'pieces' | 'units'
+import { IngredientForm } from 'src/app/interfaces/recipe.interface';
+import { RecipesService } from 'src/app/shared/services/recipes.service';
 
 @Component({
   selector: 'app-recipe-form',
@@ -20,6 +14,10 @@ export class RecipeFormComponent implements OnInit {
     name: new FormControl('', Validators.required),
     ingredients: new FormArray<FormGroup<IngredientForm>>([])
   })
+
+  constructor(
+    private recipeService: RecipesService
+  ) {}
 
   ngOnInit(): void {
     this.addIngredient();
@@ -40,7 +38,8 @@ export class RecipeFormComponent implements OnInit {
   }
 
   onSaveRecipe() {
-    console.log(this.form.getRawValue())
+    // console.log(this.form.getRawValue())
+    this.recipeService.addRecipe(this.form.getRawValue());
   }
 
 }

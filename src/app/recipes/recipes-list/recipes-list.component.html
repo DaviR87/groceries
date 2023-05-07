@@ -1,3 +1,14 @@
-<!-- <div *ngFor="let recipe of recipesList.content">
-    {{ recipe.id }} - {{ recipe.name }}
-</div> -->
+<div class="card-container">
+  <mat-card>
+    <mat-card-header>
+      <h2>Recipes List</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let item of recipesService.recipesList()">
+          {{ item.name }} - {{ item.ingredients.length }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
